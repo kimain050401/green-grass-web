@@ -41,10 +41,10 @@
             diff -= diffMin * (1000 * 60);
             let diffSec = Math.floor(diff / 1000);
 
-            document.getElementById('d-day-day') = diffDays;
-            document.getElementById('d-day-hour') = diffHours;
-            document.getElementById('d-day-min') = diffMin;
-            document.getElementById('d-day-sec') = diffSec;
+            document.getElementById('d-day-day').innerText = diffDays;
+            document.getElementById('d-day-hour').innerText = diffHours;
+            document.getElementById('d-day-min').innerText = diffMin;
+            document.getElementById('d-day-sec').innerText = diffSec;
         }
         setInterval(remaindTime,1000); //1초마다 검사를 해주면 실시간으로 시간을 알 수 있다. 
     </script>
