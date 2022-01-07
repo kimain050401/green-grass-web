@@ -41,6 +41,8 @@
             diff -= diffMin * (1000 * 60);
             let diffSec = Math.floor(diff / 1000);
 
+            console.log(`${diffDays < 10 ? `0${diffDays}` : diffDays}일 ${diffHours < 10 ? `0${diffHours}` : diffHours}시간 ${diffMin < 10 ? `0${diffMin}` : diffMin}분 ${diffSec < 10 ? `0${diffSec}` : diffSec}초`);
+
             document.getElementById('d-day-day').innerText = diffDays;
             document.getElementById('d-day-hour').innerText = diffHours;
             document.getElementById('d-day-min').innerText = diffMin;
