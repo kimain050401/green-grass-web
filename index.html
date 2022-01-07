@@ -29,9 +29,17 @@
         function remaindTime() {
             var now = new Date()
             var open = new Date(2022,01,10,09,00,00)
+
+            console.log(now)
+            console.log(open)
         
             var nt = now.getTime()
             var ot = open.getTime()
+
+            console.log(nt)
+            console.log(ot)
+
+            console.log(parseInt(ot - nt) / 1000)
 
             if(nt<ot){
                 sec = parseInt(ot - nt) / 1000
