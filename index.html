@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초록잔디</title>
+    <meta property="og:title" content="초록잔디">
+    <meta name="description" content="깃허브 정원사? 초록잔디로 시작하세요!">
+    <meta property="og:description" content="깃허브 정원사? 초록잔디로 시작하세요!">
+</head>
+<body>
+    <div class="sec7-text-box">
+        <p>오픈날짜</p>
+        <p class="runTimeCon">2021년 03월 11일 AM 11시</p>
+        <br>
+        <p class="time-title">오픈까지 남은 시간</p>
+        <div class="time">
+            <span id="d-day-hour">00</span>
+            <span class="col">:</span>
+            <span id="d-day-min">00</span>
+            <span class="col">:</span>
+            <span id="d-day-sec">00</span>
+        </div>
+      </div>
+    <script>
+        function remaindTime() {
+            var now = new Date(); //현재시간을 구한다. 
+            var open = new Date(2021,02,11,11,00,00);
+        
+            var nt = now.getTime(); // 현재의 시간만 가져온다
+            var ot = open.getTime(); // 오픈시간만 가져온다
+        
+        if(nt<ot){ //현재시간이 오픈시간보다 이르면 오픈시간까지의 남은 시간을 구한다.   
+            sec = parseInt(ot - nt) / 1000;
+            hour = parseInt(sec/60/60);
+            sec = (sec - (hour*60*60));
+            min = parseInt(sec/60);
+            sec = parseInt(sec-(min*60));
+            if(hour<10){hour="0"+hour;}
+            if(min<10){min="0"+min;}
+            if(sec<10){sec="0"+sec;}
+            document.getElementById('d-day-hour').innerText = hour;
+            document.getElementById('d-day-min').innerText = min;
+            document.getElementById('d-day-sec').innerText = sec;
+        } else{ //현재시간이 종료시간보다 크면
+            document.getElementById('d-day-hour').innerText = "00"
+            document.getElementById('d-day-min').innerText = "00"
+            document.getElementById('d-day-sec').innerText = "00"
+        }
+        }
+        setInterval(remaindTime,1000); //1초마다 검사를 해주면 실시간으로 시간을 알 수 있다. 
+    </script>
+</body>
+</html>
