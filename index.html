@@ -16,6 +16,8 @@
         <br>
         <p class="time-title">오픈까지 남은 시간</p>
         <div class="time">
+            <span id="d-day-day">00</span>
+            <span class="col">일</span>
             <span id="d-day-hour">00</span>
             <span class="col">시간</span>
             <span id="d-day-min">00</span>
@@ -28,7 +30,7 @@
         remaindTime()
         function remaindTime() {
             var now = new Date()
-            var open = new Date(2022,01,10,09,00,00)
+            var open = new Date(2022,0,10,09,00,00)
 
             console.log(now)
             console.log(open)
@@ -43,6 +45,8 @@
 
             if(nt<ot){
                 sec = parseInt(ot - nt) / 1000
+                day = parseInt(sec/60/60/24)
+                sec = (sec - (day*60*60*24))
                 hour = parseInt(sec/60/60)
                 sec = (sec - (hour*60*60))
                 min = parseInt(sec/60)
@@ -50,6 +54,7 @@
                 if(hour<10){hour="0"+hour}
                 if(min<10){min="0"+min}
                 if(sec<10){sec="0"+sec}
+                document.getElementById('d-day-day').innerText = day;
                 document.getElementById('d-day-hour').innerText = hour;
                 document.getElementById('d-day-min').innerText = min;
                 document.getElementById('d-day-sec').innerText = sec;
