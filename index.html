@@ -16,8 +16,6 @@
         <br>
         <p class="time-title">오픈까지 남은 시간</p>
         <div class="time">
-            <span id="d-day-day">00</span>
-            <span class="col">일</span>
             <span id="d-day-hour">00</span>
             <span class="col">시간</span>
             <span id="d-day-min">00</span>
@@ -29,26 +27,31 @@
     <script>
         remaindTime()
         function remaindTime() {
-            const xmasDay = new Date("2022-01-10 09:00:00");
-            const currDay = new Date();
+            var now = new Date()
+            var open = new Date(2022,01,10,09,00,00)
+        
+            var nt = now.getTime()
+            var ot = open.getTime()
 
-            let diff = xmasDay - currDay;
-            const diffDays = Math.floor((xmasDay.getTime() - currDay.getTime()) / (1000 * 60 * 60 * 24));
-            diff -= diffDays * (1000 * 60 * 60 * 24);
-            const diffHours = Math.floor(diff / (1000 * 60 * 60));
-            diff -= diffHours * (1000 * 60 * 60);
-            const diffMin = Math.floor(diff / (1000 * 60));
-            diff -= diffMin * (1000 * 60);
-            const diffSec = Math.floor(diff / 1000);
-
-            console.log(`${diffDays < 10 ? `0${diffDays}` : diffDays}일 ${diffHours < 10 ? `0${diffHours}` : diffHours}시간 ${diffMin < 10 ? `0${diffMin}` : diffMin}분 ${diffSec < 10 ? `0${diffSec}` : diffSec}초`);
-
-            document.getElementById('d-day-day').innerText = diffDays;
-            document.getElementById('d-day-hour').innerText = diffHours;
-            document.getElementById('d-day-min').innerText = diffMin;
-            document.getElementById('d-day-sec').innerText = diffSec;
+            if(nt<ot){
+                sec = parseInt(ot - nt) / 1000
+                hour = parseInt(sec/60/60)
+                sec = (sec - (hour*60*60))
+                min = parseInt(sec/60)
+                sec = parseInt(sec-(min*60))
+                if(hour<10){hour="0"+hour}
+                if(min<10){min="0"+min}
+                if(sec<10){sec="0"+sec}
+                document.getElementById('d-day-hour').innerText = hour;
+                document.getElementById('d-day-min').innerText = min;
+                document.getElementById('d-day-sec').innerText = sec;
+            } else{
+                document.getElementById('d-day-hour').innerText = "00"
+                document.getElementById('d-day-min').innerText = "00"
+                document.getElementById('d-day-sec').innerText = "00"
+            }
         }
-        setInterval(remaindTime,1000); //1초마다 검사를 해주면 실시간으로 시간을 알 수 있다. 
+        setInterval(remaindTime,1000)
     </script>
 </body>
 </html>
