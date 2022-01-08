@@ -46,9 +46,8 @@
             <h1 style="display: inline; color: #52a450;">잔</h1>
             <h1 style="display: inline; color: #509c4d;">디</h1>
             <br>
-            <p>2022년 01월 10일 오전 09시 공개 예정</p>
+            <p>2022년 01월 10일 오전 09시 공개</p>
             <br>
-            <p>공개까지 남은 시간</p>
             <div id="d-day"></div>
             <!-- <br>
             <p style="color: gray; font-size: 12px;">* 앱 심사가 거절 없이 통과되었을 때의 예정 시간입니다.</p> -->
@@ -72,7 +71,7 @@
 
             console.log(parseInt(ot - nt) / 1000)
 
-            if(nt<ot){
+            if(nt-1<ot){
                 sec = parseInt(ot - nt) / 1000
                 day = parseInt(sec/60/60/24)
                 sec = (sec - (day*60*60*24))
@@ -83,9 +82,9 @@
                 if(hour<10){hour="0"+hour}
                 if(min<10){min="0"+min}
                 if(sec<10){sec="0"+sec}
-                document.getElementById('d-day').innerHTML = "<p>" + day + "일 " + hour + "시간 " + min + "분 " + sec + "초</p>";
+                document.getElementById('d-day').innerHTML = "<p>공개까지 남은 시간</p><p>" + day + "일 " + hour + "시간 " + min + "분 " + sec + "초</p>";
             } else{
-                document.getElementById('d-day').innerHTML = '<img onclick="location.href=' + "'https://apps.apple.com/kr/app/초록잔디/id1602956399'" + ';" src="Download_on_the_App_Store_Badge_KR_RGB_blk_100317.svg" width="200px">'
+                document.getElementById('d-day').innerHTML = '<img style="cursor: pointer;" onclick="location.href=' + "'https://apps.apple.com/kr/app/초록잔디/id1602956399'" + ';" src="https://green-grass.tech/Download_on_the_App_Store_Badge_KR_RGB_blk_100317.svg" width="200px">'
             }
         }
         setInterval(remaindTime,1000)
