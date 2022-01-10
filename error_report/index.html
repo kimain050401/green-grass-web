@@ -30,17 +30,21 @@
             <p>(선택) 오류제보에 대한 답장을 받으실 이메일을 작성해주세요.</p>
             <textarea style="resize: none;" name="mail" id="mail" rows="1" required></textarea><br>
             <label><input type="checkbox" name="mail_check" onclick="non_write('mail')">작성 안함</label>
+            <br><br>
             <p>오류 재현 방법을 작성해주세요.</p>
             <textarea style="resize: none;" name="reproduction" rows="5" required></textarea>
+            <br><br>
             <p>오류로 인해 발생하는 증상을 작성해주세요.</p>
             <textarea style="resize: none;" name="symptom" rows="5" required></textarea>
+            <br><br>
             <p>(선택) 앱 업데이트가 배포되기 전에 임시적으로 해당 오류를 해결할 수 있는 방법을 작성해주세요.</p>
             <textarea style="resize: none;" name="temp_solution" id="temp_solution" rows="5" required></textarea><br>
             <label><input type="checkbox" name="temp_solution_check" onclick="non_write('temp_solution')">작성 안함</label>
+            <br><br>
             <p>(선택) 앱 업데이트에 포함될 해당 오류를 해결할 수 있는 방법을 작성해주세요.</p>
             <textarea style="resize: none;" name="solution" id="solution" rows="5" required></textarea><br>
             <label><input type="checkbox" name="solution_check" onclick="non_write('solution')">작성 안함</label><br><br>
-            <input type="submit" value="오류 제보하기">
+            <input type="submit" style="font-size: 24px;" value="오류 제보하기">
         </form>
         <br><br><br><br>
         <a href="https://green-grass.tech/privacy_policy" style="color: #52a450; font-weight: 700;">개인정보처리방침</a>
