@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초록잔디 오류제보</title>
+    <meta property="og:title" content="초록잔디 오류제보">
+    <meta name="description" content="깃허브 정원사? 초록잔디로 시작하세요!">
+    <meta property="og:description" content="깃허브 정원사? 초록잔디로 시작하세요!">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+        html, body{
+            background-color: #e8ffea;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        a{
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        textarea{
+            width: 96%;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        <br><br>
+        <form action="https://api.findflag.kr/green-grass/error-report" method="post">
+            <p>(선택) 오류제보에 대한 답장을 받으실 이메일을 작성해주세요.</p>
+            <textarea style="resize: none;" name="mail" id="mail" rows="1" required></textarea><br>
+            <label><input type="checkbox" name="mail_check" onclick="non_write('mail')">작성 안함</label>
+            <p>오류 재현 방법을 작성해주세요.</p>
+            <textarea style="resize: none;" name="reproduction" rows="5" required></textarea>
+            <p>오류로 인해 발생하는 증상을 작성해주세요.</p>
+            <textarea style="resize: none;" name="symptom" rows="5" required></textarea>
+            <p>(선택) 앱 업데이트가 배포되기 전에 임시적으로 해당 오류를 해결할 수 있는 방법을 작성해주세요.</p>
+            <textarea style="resize: none;" name="temp_solution" id="temp_solution" rows="5" required></textarea><br>
+            <label><input type="checkbox" name="temp_solution_check" onclick="non_write('temp_solution')">작성 안함</label>
+            <p>(선택) 앱 업데이트에 포함될 해당 오류를 해결할 수 있는 방법을 작성해주세요.</p>
+            <textarea style="resize: none;" name="solution" id="solution" rows="5" required></textarea><br>
+            <label><input type="checkbox" name="solution_check" onclick="non_write('solution')">작성 안함</label><br><br>
+            <input type="submit" value="오류 제보하기">
+        </form>
+        <br><br><br><br>
+        <a href="https://green-grass.tech/privacy_policy" style="color: #52a450; font-weight: 700;">개인정보처리방침</a>
+        <script>
+            function non_write(element){
+                if(document.querySelector("input[name=" + element + "_check]").checked == true){
+                    document.getElementById(element).value = "작성 안함"
+                    document.getElementById(element).readOnly = true
+                } else{
+                    document.getElementById(element).value = ""
+                    document.getElementById(element).readOnly = false
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
