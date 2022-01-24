@@ -19,12 +19,33 @@
         }
         textarea{
             width: 96%;
-            max-width: 400px;
+            max-width: 500px;
+            border-radius: 10px;
+            /* background-color: #d4ffd3; */
+        }
+        .box-style{
+            font-family: 'Noto Sans KR', sans-serif;
+            display: inline-block;
+            color: #328f30;
+            font-weight: 700;
+            border-radius: 10px;
+            border: solid black 1px;
+            width: 96%;
+            max-width: 500px;
+            padding: 10px;
+            text-decoration: none;
+            background-color: #d4ffd3;
         }
     </style>
 </head>
 <body>
     <div style="text-align: center;">
+        <br>
+        <div style="text-align: left; width: 96%; max-width: 500px; display: inline-block;">
+            <a href="../support" style="text-align: left; color: #328f30; font-weight: 700; text-decoration: none;">< 이전</a>
+        </div>
+        <br>
+        <h1>오류 제보하기</h1>
         <br>
         <form action="https://api.findflag.kr/green-grass/error-report" method="post">
             <p>(선택) 오류제보에 대한 답장을 받으실 이메일을 작성해주세요.</p>
@@ -44,10 +65,11 @@
             <p>(선택) 앱 업데이트에 포함될 해당 오류를 해결할 수 있는 방법을 작성해주세요.</p>
             <textarea style="resize: none;" name="solution" id="solution" rows="5" required></textarea><br>
             <label><input type="checkbox" name="solution_check" onclick="non_write('solution')">작성 안함</label><br><br>
-            <input type="submit" style="font-size: 24px;" value="오류 제보하기">
+            <input class="box-style" type="submit" style="font-size: 16px;" value="오류 제보하기">
         </form>
-        <br><br><br><br>
+        <br><br><br>
         <a href="https://green-grass.tech/privacy_policy" style="color: #52a450; font-weight: 700;">개인정보처리방침</a>
+        <br><br>
         <br><br>
         <script>
             function non_write(element){
