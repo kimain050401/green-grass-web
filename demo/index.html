@@ -119,7 +119,7 @@
                         if(varUA.indexOf("iphone") > -1 || varUA.indexOf("ipad") > -1 || varUA.indexOf("ipod") > -1){
                             document.getElementById('download-button').innerHTML = '<img style="cursor: pointer;" onclick="location.href=' + "'https://apps.apple.com/kr/app/초록잔디/id1602956399'" + ';" src="https://apple-resources.s3.amazonaws.com/media-badges/download-on-the-app-store/black/ko-kr.svg" width="200px">'
                         } else{
-                            document.getElementById('download-button').innerHTML = '<p id="link-copy-button" style="width: 200px; height: 62px; border-radius: 5px; border: solid 1px white; background-color: black; color: white;" onclick="clip()">링크 복사</p>'
+                            document.getElementById('download-button').innerHTML = '<p id="link-copy-button" style="cursor: pointer; display: inline-block; font-size: 20px; line-height: 62px; width: 200px; height: 62px; border-radius: 10px; border: solid 1px white; background-color: black; color: white;" onclick="clip()">링크 복사</p>'
                         }
                         function clip(){
                             var dummy = document.createElement("input");
