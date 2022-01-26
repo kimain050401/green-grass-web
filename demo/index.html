@@ -8,12 +8,14 @@
     <meta property="og:title" content="초록잔디">
     <meta name="description" content="깃허브 정원사? 초록잔디로 시작하세요!">
     <meta property="og:description" content="깃허브 정원사? 초록잔디로 시작하세요!">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" style="user-select: auto;"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
         html, body{
             font-family: 'Noto Sans KR', sans-serif;
             background-color: #ffffff;
             margin: 0;
+            word-wrap: keep-all;
         }
         .center-box{
             position: absolute;
@@ -44,16 +46,18 @@
             line-height: 60px;
         }
         h2{
-            font-size: 30px;
+            font-size: 35px;
             padding: 0;
             margin: 0;
-            line-height: 40px;
+            line-height: 50px;
+            /* color: #ffffff; */
         }
         h3{
-            font-size: 20px;
+            font-size: 25px;
             padding: 0;
             margin: 0;
-            line-height: 30px;
+            line-height: 35px;
+            /* color: #ffffff; */
         }
         .videos{
 			position: relative;
@@ -147,49 +151,52 @@
         </div>
         <video class="videos" id="vid" muted="muted" autoplay="autoplay" poster="background.jpg" playsinline loop><source src="background.mp4" type="video/mp4"></video>
     </div>
-    
-    <div class="tab-box" style="width: 100vw; height: 100vh; background-color: gray;">
-        <div style="position: relative;">
+
+    <div class="tab-box" style="width: 100vw; height: 100vh; background-color: #9de5a3;">
+        <div style="position: relative; display: inline-block;">
             <div class="middle">
-                <div style="display: inline-block;">
-    	    		<h2>프로필 탭</h2>
-    	    		<h3>초록잔디로 시작하세요!</h3>
-                </div>
-                <div style="display: inline-block;">
-    	    		<img style="cursor: pointer;" src="MainView.png" width="300vh">
-		</div>
+                <h2>홈 탭</h2>
+                <h3>한눈에 들어오는 정보로 커밋수를 늘리다</h3>
+                <img style="cursor: pointer;" src="MainView.png" width="300vh">
             </div>
         </div>
     </div>
 
-    <div class="tab-box" style="width: 100vw; height: 100vh; background-color: red;">
-        <div style="position: relative;">
+    <div class="tab-box" style="width: 100vw; height: 100vh; background-color: #8ad889;">
+        <div style="position: relative; display: inline-block;">
             <div class="middle">
-    	    	<h1>깃허브 정원사?</h1>
-    	    	<h1>초록잔디로 시작하세요!</h1>
-    	    	<img style="cursor: pointer;" onclick="location.href='https://apps.apple.com/kr/app/초록잔디/id1602956399';" src="https://green-grass.tech/Download_on_the_App_Store_Badge_KR_RGB_blk_100317.svg" width="200px">
-			</div>
+                <h2>친구 탭</h2>
+                <h3>선의의 경쟁으로 커밋수를 늘리다</h3>
+                <img style="cursor: pointer;" src="FriendView.png" width="300vh">
+            </div>
         </div>
     </div>
 
-    <div class="tab-box" style="width: 100vw; height: 100vh; background-color: yellow;">
-        <div style="position: relative;">
+    <div class="tab-box" style="width: 100vw; height: 100vh; background-color: #68cd67;">
+        <div style="position: relative; display: inline-block;">
             <div class="middle">
-    	    	<h1>깃허브 정원사?</h1>
-    	    	<h1>초록잔디로 시작하세요!</h1>
-    	    	<img style="cursor: pointer;" onclick="location.href='https://apps.apple.com/kr/app/초록잔디/id1602956399';" src="https://green-grass.tech/Download_on_the_App_Store_Badge_KR_RGB_blk_100317.svg" width="200px">
-			</div>
+                <h2>등급 탭</h2>
+                <h3>등급 올리는 재미로 커밋수를 늘리다</h3>
+                <img style="cursor: pointer;" src="ClassView.png" width="300vh">
+            </div>
         </div>
     </div>
 
-    <div class="tab-box" style="width: 100vw; height: 100vh;">
-        <div style="position: relative;">
+    <div class="tab-box" style="width: 100vw; height: 100vh; background-color: #5db85b;">
+        <div style="position: relative; display: inline-block;">
             <div class="middle">
-    	    	<h1>깃허브 정원사?</h1>
-    	    	<h1>초록잔디로 시작하세요!</h1>
-    	    	<img style="cursor: pointer;" onclick="location.href='https://apps.apple.com/kr/app/초록잔디/id1602956399';" src="https://green-grass.tech/Download_on_the_App_Store_Badge_KR_RGB_blk_100317.svg" width="200px">
-			</div>
+                <h2>프로필 탭</h2>
+                <h3>예쁜 프로필 카드로 커밋수를 늘리다</h3>
+                <img style="cursor: pointer;" src="ProfileView.png" width="300vh">
+            </div>
         </div>
+    </div>
+
+    <div style="text-align: center; height: 10vh; background-color: #5db85b;">
+        <a style="color: black; font-weight: 700;" href="https://green-grass.tech/privacy_policy">개인정보처리방침</a>
+        <a> | </a>
+        <a style="color: black;" href="https://green-grass.tech/support">문의하기</a>
+        <p>Copyright © 2021 KimAin. 모든 권리 보유.</p>
     </div>
 </body>
 </html>
