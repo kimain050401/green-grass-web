@@ -50,45 +50,10 @@
             <br>
             <!-- <p>2022년 01월 10일 오전 09시 공개</p> -->
             <br>
-            <div id="d-day"></div>
+            <img style="cursor: pointer;" onclick="location.href='https://apps.apple.com/kr/app/초록잔디/id1602956399';" src="https://green-grass.tech/Download_on_the_App_Store_Badge_KR_RGB_blk_100317.svg" width="200px">
         </div>
         <canvas id="canvas"></canvas>
     </div>
-    <script>
-        remaindTime()
-        function remaindTime() {
-            var now = new Date()
-            var open = new Date(2022,0,10,09,00,00)
-
-            console.log(now)
-            console.log(open)
-        
-            var nt = now.getTime()
-            var ot = open.getTime()
-
-            console.log(nt)
-            console.log(ot)
-
-            console.log(parseInt(ot - nt) / 1000)
-
-            if(nt-1<ot){
-                sec = parseInt(ot - nt) / 1000
-                day = parseInt(sec/60/60/24)
-                sec = (sec - (day*60*60*24))
-                hour = parseInt(sec/60/60)
-                sec = (sec - (hour*60*60))
-                min = parseInt(sec/60)
-                sec = parseInt(sec-(min*60))
-                if(hour<10){hour="0"+hour}
-                if(min<10){min="0"+min}
-                if(sec<10){sec="0"+sec}
-                document.getElementById('d-day').innerHTML = "<p>공개까지 남은 시간</p><p>" + day + "일 " + hour + "시간 " + min + "분 " + sec + "초</p>";
-            } else{
-                document.getElementById('d-day').innerHTML = '<img style="cursor: pointer;" onclick="location.href=' + "'https://apps.apple.com/kr/app/초록잔디/id1602956399'" + ';" src="https://green-grass.tech/Download_on_the_App_Store_Badge_KR_RGB_blk_100317.svg" width="200px">'
-            }
-        }
-        setInterval(remaindTime,1000)
-    </script>
     <script>
         function random(low, high) {
   return Math.random() * (high - low) + low;
