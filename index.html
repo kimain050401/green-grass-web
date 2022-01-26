@@ -140,7 +140,7 @@
                     <div id="download-button"></div>
                     <script>
                         var varUA = navigator.userAgent.toLowerCase();
-                        if(varUA.indexOf("iphone") > -1 || varUA.indexOf("ipad") > -1 || varUA.indexOf("ipod") > -1){
+                        if(varUA.indexOf("iphone") > -1 || varUA.indexOf("ipad") > -1 || varUA.indexOf("ipod") > -1 || varUA.indexOf("mac") > -1){
                             document.getElementById('download-button').innerHTML = '<img style="cursor: pointer;" onclick="location.href=' + "'https://apps.apple.com/kr/app/초록잔디/id1602956399'" + ';" src="https://apple-resources.s3.amazonaws.com/media-badges/download-on-the-app-store/black/ko-kr.svg" width="200px">'
                         } else{
                             document.getElementById('download-button').innerHTML = '<br><div style="cursor: pointer; display: inline-block; border-radius: 10px; border: solid 1px white; background-color: black; color: white; padding: 2px 10px 4px 10px;" onclick="clip()"><p id="link-copy-button" style="font-size: 20px; line-height: 2px;">링크 복사하기</p><p style="font-size: 12px; line-height: 2px;">현재 접속하신 플랫폼은 초록잔디 설치가 지원되지 않습니다.</p></div>'
