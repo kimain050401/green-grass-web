@@ -11,7 +11,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
         html, body{
-            background-color: pink;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #ffffff;
             margin: 0;
         }
         .center-box{
@@ -24,29 +25,150 @@
             transform: translate(-50%, -50%);
             text-align: center;
         }
+        .tab-box{
+            display: inline-block;
+        }
+        .middle{
+            position: absolute;
+            width: 100vw;
+            height: fit-content;
+            left: 50vw;
+            top: 50vh;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+        h1{
+            font-size: 50px;
+            padding: 0;
+            margin: 0;
+            line-height: 60px;
+        }
+        h2{
+            font-size: 30px;
+            padding: 0;
+            margin: 0;
+            line-height: 40px;
+        }
+        h3{
+            font-size: 20px;
+            padding: 0;
+            margin: 0;
+            line-height: 30px;
+        }
+        .videos{
+			position: relative;
+            height: 100vh;
+            width: 100vw;
+            object-fit: cover;
+        }
+        .s1_arrow{
+            display: inline-block;
+            position: relative;
+            top: 28px;
+            margin-left: -10px;
+            text-align: center;
+            animation: arrow_up 2s infinite;
+        }
+        .scroll-arrow{
+            width:8px;
+            height:8px;
+            border-right: 3px solid white;
+            border-bottom: 3px solid white;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            animation: arrow-wave 1s infinite;
+            animation-direction: alternate;
+        }
+        .scroll-arrow:nth-child(1){
+            animation-delay: 0.1s;
+        }
+        .scroll-arrow:nth-child(2){
+            margin-top:6px;
+            animation-delay: 0.2s;
+        }
+        .scroll-arrow:nth-child(3){
+            margin-top:6px;
+            animation-delay: 0.3s;
+        }
+        @keyframes arrow-wave{
+            0%{opacity: 0;}
+            50%{opacity: .5;}
+            100%{opacity: 1;}
+        }
+        @keyframes arrow_up{
+            0%{top: 0px;}
+            50%{top: 20px;}
+            100%{top: 0px;}
+        }
     </style>
 </head>
 <body>
-    <div style="width: 100vw; height: 100vh; background-color: red;">
-        <h1>깃허브 정원사?</h1>
-        <h1>초록잔디로 시작하세요!</h1>
-        <img style="cursor: pointer;" onclick="location.href='https://apps.apple.com/kr/app/초록잔디/id1602956399';" src="https://green-grass.tech/Download_on_the_App_Store_Badge_KR_RGB_blk_100317.svg" width="200px">
+    <div class="tab-box" style="width: 100vw; height: 100vh; position: relative; background-image: url('background.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div style="position: absolute; z-index: 10;">
+            <div style="position: relative;">
+                <div class="middle">
+                    <h1 style="color: #ffffff;">깃허브 정원사?</h1>
+                    <h1 style="color: #ffffff;">초록잔디로 시작하세요!</h1>
+                    <br>
+                    <img style="cursor: pointer;" onclick="location.href='https://apps.apple.com/kr/app/초록잔디/id1602956399';" src="https://apple-resources.s3.amazonaws.com/media-badges/download-on-the-app-store/black/ko-kr.svg" width="200px">
+                </div>
+                <div style="position: absolute; top: 85vh; text-align: center; width: 100vw;">
+                    <div class="s1_arrow">
+                        <div class="scroll-arrow"></div>
+                        <div class="scroll-arrow"></div>
+                        <div class="scroll-arrow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <video class="videos" id="vid" muted="muted" autoplay="autoplay" poster="background.jpg" playsinline><source src="back1.mp4" type="video/mp4"></video>
+    </div>
+    
+    <div class="tab-box" style="width: 100vw; height: 100vh; background-color: gray;">
+        <div style="position: relative;">
+            <div class="middle">
+                <div style="display: inline-block;">
+    	    		<h2>프로필 탭</h2>
+    	    		<h3>초록잔디로 시작하세요!</h3>
+                </div>
+                <div style="display: inline-block;">
+    	    		<img style="cursor: pointer;" onclick="location.href='https://apps.apple.com/kr/app/초록잔디/id1602956399';" src="https://is4-ssl.mzstatic.com/image/thumb/PurpleSource126/v4/d8/d5/dc/d8d5dcd6-a0a6-5ebd-e6ef-4a29ccc3750c/9f61da87-8b04-4636-8623-6b2df63b6f94__Ucd08_Ub85d_Uc794_Ub514__Ub178_Uce58.001.jpeg/460x0w.webp" width="300vh">
+				</div>
+            </div>
+        </div>
     </div>
 
-    <div style="width: 100vw; height: 100vh; background-color: blue;">
-        <h1>홈 탭</h1>
+    <div class="tab-box" style="width: 100vw; height: 100vh; background-color: red;">
+        <div style="position: relative;">
+            <div class="middle">
+    	    	<h1>깃허브 정원사?</h1>
+    	    	<h1>초록잔디로 시작하세요!</h1>
+    	    	<img style="cursor: pointer;" onclick="location.href='https://apps.apple.com/kr/app/초록잔디/id1602956399';" src="https://green-grass.tech/Download_on_the_App_Store_Badge_KR_RGB_blk_100317.svg" width="200px">
+			</div>
+        </div>
     </div>
 
-    <div style="width: 100vw; height: 100vh; background-color: green;">
-        <h1>친구 탭</h1>
+    <div class="tab-box" style="width: 100vw; height: 100vh; background-color: yellow;">
+        <div style="position: relative;">
+            <div class="middle">
+    	    	<h1>깃허브 정원사?</h1>
+    	    	<h1>초록잔디로 시작하세요!</h1>
+    	    	<img style="cursor: pointer;" onclick="location.href='https://apps.apple.com/kr/app/초록잔디/id1602956399';" src="https://green-grass.tech/Download_on_the_App_Store_Badge_KR_RGB_blk_100317.svg" width="200px">
+			</div>
+        </div>
     </div>
 
-    <div style="width: 100vw; height: 100vh; background-color: magenta;">
-        <h1>등급 탭</h1>
-    </div>
-
-    <div style="width: 100vw; height: 100vh; background-color: purple;">
-        <h1>프로필 탭</h1>
+    <div class="tab-box" style="width: 100vw; height: 100vh;">
+        <div style="position: relative;">
+            <div class="middle">
+    	    	<h1>깃허브 정원사?</h1>
+    	    	<h1>초록잔디로 시작하세요!</h1>
+    	    	<img style="cursor: pointer;" onclick="location.href='https://apps.apple.com/kr/app/초록잔디/id1602956399';" src="https://green-grass.tech/Download_on_the_App_Store_Badge_KR_RGB_blk_100317.svg" width="200px">
+			</div>
+        </div>
     </div>
 </body>
 </html>
